@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 
@@ -30,50 +30,65 @@
 
         <div class="row">
             <div class="col-md-12">
-                <!--Train Input Board, pulled from Firebase-->
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Train Name</th>
-                            <th scope="col">Destination</th>
-                            <th scope="col">Frequency (min)</th>
-                            <th scope="col">Next Arrival</th>
-                            <th scope="col">Minutes Away</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+                <div class="card">
+                    <div class="card-header">
+                        Current Train Schedule
+                    </div>
+                    <div class="card-body">
+                        <!--Train Input Board, pulled from Firebase-->
+                        <table class="table" id="trainSchedule">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="row">
             <!--User Input Form, pushed to Firebase-->
-            <div class="col-md-4">
-                <form role="form">
-                    <div class="form-group row">
-                        <label for="name-input">Train Name</label>
-                        <input class="form-control" id="name-input" type="text">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Add Train
                     </div>
-                    <div class="form-group row">
-                        <label for="Destination-input">Destination</label>
-                        <input class="form-control" id="Destination-input" type="text">
+                    <div class="card-body ">
+                        <form role="form">
+                            <div class="form-group row">
+                                <label for="name-input">Train Name</label>
+                                <input class="form-control" id="name-input" type="text">
+                            </div>
+                            <div class="form-group row">
+                                <label for="destination-input">Destination</label>
+                                <input class="form-control" id="destination-input" type="text">
+                            </div>
+                            <div class="form-group row">
+                                <label for="time-input">First Train Time (HH:mm - military time)</label>
+                                <input class="form-control" id="time-input" type="text">
+                            </div>
+                            <div class="form-group row">
+                                <label for="frequency-input">Frequency (min)</label>
+                                <input class="form-control" id="frequency-input" type="text">
+                            </div>
+                            <button class="btn btn-primary" id="addTrain" type="submit">Submit</button>
+                        </form>
                     </div>
-                    <div class="form-group row">
-                        <label for="first-train-input">First Train Time (HH:mm - military time)</label>
-                        <input class="form-control" id="first-train-input" type="text">
-                    </div>
-                    <div class="form-group row">
-                        <label for="Frequency-input">Frequency (min)</label>
-                        <input class="form-control" id="Frequency-input" type="text">
-                    </div>
-                    <button class="btn btn-primary" id="addEmployee" type="submit">Submit</button>
-                </form>
+                </div>
             </div>
+
         </div>
 
-    </div>
-
 </body>
+
+<script src="assets/javascript/script.js"></script>
 
 </html>
