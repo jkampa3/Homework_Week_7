@@ -1,6 +1,7 @@
 .jumbotron {
     background-color: black;
     color: white;
-    margin: 10px 190px;
+    margin: 10px 200px;
+    padding: 32px 16px;
     text-align: center;
 }
